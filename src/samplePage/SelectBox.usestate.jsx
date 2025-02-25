@@ -3,9 +3,10 @@ import { useState } from "react"
 export const SelectBox = () => {
     const [selectVal, setSelectVal] = useState("e");
 
-  return (
+    return (
     <>
-        <select onChange={(e) => setSelectVal(e.target.value)} defaultValue={selectVal ? selectVal : "c"}>
+        {/* <select onChange={(e) => setSelectVal(e.target.value)} defaultValue={selectVal ? selectVal : "c"}> */}
+        <select onChange={(e) => setSelectVal(e.target.value)} defaultValue={selectVal || "c"}>
             <option value={"a"}>1번</option>
             <option value={"b"}>2번</option>
             <option value={"c"}>3번</option>

@@ -1,7 +1,7 @@
-import { Button } from "./samplePage/Button.ustats"
-import { Input } from "./samplePage/Input"
-import { SelectBox } from "./samplePage/SelectBox.usestate"
-import { Table } from "./samplePage/Tabls"
+import { Button } from "./samplePage/Button.useState"
+import { Input } from "./samplePage/Input.useRef"
+import { SelectBox } from "./samplePage/SelectBox.useState"
+import { Table } from "./samplePage/Table"
 
 function App() {
   return (
