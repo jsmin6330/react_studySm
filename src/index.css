@@ -10,3 +10,9 @@ th, td {
   border-bottom: 1px solid #CD5C5C;
   text-align: center;
 }
+
+.card {
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+}
