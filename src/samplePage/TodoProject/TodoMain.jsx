@@ -1,31 +1,35 @@
-import { useState } from "react"
+import { useReducer, useState } from "react"
 import todoData from "../../common/todoData"
 import { TodoAdd } from "./TodoAdd"
 import { TodoList } from "./TodoList"
+import { todoReducer } from "./todoReducer.useReducer"
 
 export const TodoMain = () => {
-    const [tasks, setTasks] = useState(todoData);
+
+    const [tasks, dispatch] = useReducer(todoReducer, todoData);
+
     const handleAddTask = (text) => {
-        setTasks([...tasks, {
-            id: tasks.length++,
-            text: text,
-            done: false
-        }])
+        dispatch({
+            type: 'add',
+            id: tasks.legth > 0 ? tasks[tasks.length - 1].id + 1 : 1, 
+            text: text
+        })
     }
+
     const handleChangeTask = (task) => {
-        setTasks(tasks.map(t => {
-            if(t.id === task.id){
-                return task
-            }else{
-                return t
-            }
-        }))
+        dispatch({
+            type: 'change',
+            task: task
+        })
     }
-    const handleDelete = (taskId) => {
-        setTasks(
-            tasks.filter(t => t.id != taskId)
-        )
+
+    const handleDeleteTask = (taskId) => {
+        dispatch({
+            type: 'delete',
+            taskId: taskId
+        })
     }
+
 
     return (
         <>
@@ -33,7 +37,7 @@ export const TodoMain = () => {
             <TodoAdd onAddTask={handleAddTask}/>
             <TodoList tasks = {tasks} 
                 onChangeTask = {handleChangeTask}
-                onDeleteTask = {handleDelete}/>
+                onDeleteTask = {handleDeleteTask}/>
         </>
     )
 }
