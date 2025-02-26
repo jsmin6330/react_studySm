@@ -7,6 +7,7 @@ import { SelectBox } from "./samplePage/SelectBox.useState"
 import { Table } from "./samplePage/Table"
 import { HeavyJobComponent, HeavyJobComponent2, MemoHeavyJobComponent, MemoHeavyJobComponent2 } from "./samplePage/MemoComponent.react.Memo"
 import { useState, useMemo } from "react"
+import {TodoMain} from "./samplePage/TodoProject/TodoMain"
 
 function App() {
   const [plusNum, setPlusNum] = useState(0);
@@ -33,12 +34,14 @@ function App() {
       <ChildComponent title={"제목5"} content={"내용을 작성해요"}/> */}
 
 
-      <input type="number" onChange={(e) => setPlusNum(e.target.value)} />
+      {/* <input type="number" onChange={(e) => setPlusNum(e.target.value)} /> */}
       {/* <HeavyJobComponent num={Number(plusNum)} /> */}
-      <MemoHeavyJobComponent num = {Number(plusNum)} numObj = {memoNum}/>
-      <input type="number" onChange={(e) => setMultiNum(e.target.value)} />
+      {/* <MemoHeavyJobComponent num = {Number(plusNum)} numObj = {memoNum}/> */}
+      {/* <input type="number" onChange={(e) => setMultiNum(e.target.value)} /> */}
       {/* <HeavyJobComponent2 num={Number(multiNum)}/> */}
-      <MemoHeavyJobComponent2 num = {Number(multiNum)}/>
+      {/* <MemoHeavyJobComponent2 num = {Number(multiNum)}/> */}
+
+      <TodoMain/>
     </>
   )
 }
