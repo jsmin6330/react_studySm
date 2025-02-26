@@ -6,11 +6,14 @@ import { MemoComponent } from "./samplePage/MemoComponent.useMemo"
 import { SelectBox } from "./samplePage/SelectBox.useState"
 import { Table } from "./samplePage/Table"
 import { HeavyJobComponent, HeavyJobComponent2, MemoHeavyJobComponent, MemoHeavyJobComponent2 } from "./samplePage/MemoComponent.react.Memo"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 function App() {
   const [plusNum, setPlusNum] = useState(0);
   const [multiNum, setMultiNum] = useState(0);
+
+  //객체를 memo 시킨다.
+  const memoNum = useMemo(() => ({num: Number(plusNum)}), [plusNum]);
 
   return (
     <>
@@ -32,7 +35,7 @@ function App() {
 
       <input type="number" onChange={(e) => setPlusNum(e.target.value)} />
       {/* <HeavyJobComponent num={Number(plusNum)} /> */}
-      <MemoHeavyJobComponent num = {Number(plusNum)} numObj = {{num: Number(plusNum)}}/>
+      <MemoHeavyJobComponent num = {Number(plusNum)} numObj = {memoNum}/>
       <input type="number" onChange={(e) => setMultiNum(e.target.value)} />
       {/* <HeavyJobComponent2 num={Number(multiNum)}/> */}
       <MemoHeavyJobComponent2 num = {Number(multiNum)}/>
