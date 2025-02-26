@@ -1,6 +1,7 @@
 import { Button } from "./samplePage/Button.useState"
 import { ParantComponent } from "./samplePage/Hook.useEffect/ParantComponent"
 import { Input } from "./samplePage/Input.useRef"
+import { MemoComponent } from "./samplePage/MemoComponent.useMemo"
 import { SelectBox } from "./samplePage/SelectBox.useState"
 import { Table } from "./samplePage/Table"
 
@@ -13,7 +14,9 @@ function App() {
       <br/>
       {/* <SelectBox/> */}
       <br/>
-      <Table/>
+      {/* <Table/> */}
+      <ParantComponent/>
+      
     </>
   )
   
