@@ -15,8 +15,8 @@ function App() {
       {/* <SelectBox/> */}
       <br/>
       {/* <Table/> */}
-      <ParantComponent/>
-      
+      {/* <ParantComponent/> */}
+      <MemoComponent/>
     </>
   )
   
